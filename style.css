@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap");
 :root {
   --text-color: #fff;
@@ -42,6 +41,7 @@ body section {
   font-family: "Figtree", sans-serif;
   font-weight: 600;
   font-style: normal;
+  font-variant: small-caps;
 }
 
 .container {
@@ -199,9 +199,12 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 .home .home-info .left {
   flex: 1;
+  min-width: 280px;
 }
 .home .home-info .left h3 {
   font-size: 2.5rem;
@@ -219,7 +222,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   color: var(--first);
   font-size: 2.2rem;
   font-weight: bold;
-  min-width: 280px;
   margin-bottom: 20px;
 }
 .home .home-info .left h4 span {
@@ -231,8 +233,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   font-weight: 400;
   color: var(--first);
   line-height: 25px;
-  -webkit-mask-box-image: 50px;
-          mask-border: 50px;
   margin-bottom: 15px;
   text-align: justify;
 }
@@ -241,6 +241,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   align-items: center;
   gap: 15px;
   margin: 25px 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  z-index: 10;
 }
 .home .home-info .left .social a {
   text-decoration: none;
@@ -269,6 +272,7 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   align-items: center;
   gap: 20px;
   margin: 25px 0;
+  flex-wrap: wrap;
 }
 .home .home-info .left .btn button {
   font-size: 15px;
@@ -290,6 +294,7 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 }
 .home .home-info .right {
   flex: 1;
+  min-width: 250px;
 }
 .home .home-info .right .profile {
   text-align: right;
@@ -311,6 +316,74 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 .home .home-info .right .profile img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 80px var(--color);
+}
+.home {
+  /* ================= RESPONSIVE ================= */
+}
+@media screen and (max-width: 1024px) {
+  .home .home-info {
+    gap: 30px;
+  }
+  .home .home-info .right .profile img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home .home-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .home .home-info .left {
+    width: 100%;
+  }
+  .home .home-info .left p {
+    width: 100%;
+  }
+  .home .home-info .left .social {
+    justify-content: center;
+  }
+  .home .home-info .left .btn {
+    justify-content: center;
+  }
+  .home .home-info .right {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .home .home-info .right .profile img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home .home-info .left h1 {
+    font-size: 3rem;
+  }
+  .home .home-info .left h3 {
+    font-size: 1.8rem;
+  }
+  .home .home-info .left h4 {
+    font-size: 1.5rem;
+  }
+  .home .home-info .left p {
+    font-size: 14px;
+  }
+  .home .home-info .left .social a {
+    width: 40px;
+    height: 40px;
+  }
+  .home .home-info .left .social a i {
+    font-size: 18px;
+  }
+  .home .home-info .left .btn button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .home .home-info .right .profile img {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .about {
@@ -401,8 +474,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 
 .skills {
   text-align: center;
-  /* LEFT SIDE (PROGRESS BARS) */
-  /* RIGHT SIDE (CIRCLES) */
 }
 .skills .section-title {
   font-size: 2.5rem;
@@ -418,6 +489,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 3rem;
+}
+.skills {
+  /* LEFT SIDE (PROGRESS BARS) */
 }
 .skills .skills-left {
   flex: 1;
@@ -471,6 +545,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   min-width: 35px;
   color: var(--first);
   text-align: right;
+}
+.skills {
+  /* RIGHT SIDE (CIRCLES) */
 }
 .skills .skills-right {
   flex: 1;
@@ -542,7 +619,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   padding: 130px 0;
   background: transparent;
   transition: 0.3s ease;
-  /* Timeline Wrapper */
 }
 .education .section-title {
   text-align: center;
@@ -552,6 +628,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 }
 .education .section-title span {
   color: var(--color);
+}
+.education {
+  /* Timeline Wrapper */
 }
 .education .education-wrapper {
   display: grid;
@@ -589,8 +668,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   border-right: 6px solid var(--grd-color);
   transition: 0.3s ease;
   /* Timeline middle circle */
-  /* Right side (odd cards) */
-  /* Left side (even cards) */
 }
 .education .edu-card::before {
   content: "";
@@ -603,9 +680,15 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   background: transparent;
   z-index: 10;
 }
+.education .edu-card {
+  /* Right side (odd cards) */
+}
 .education .edu-card:nth-child(odd)::before {
   right: -32px;
   transform: translateX(50%);
+}
+.education .edu-card {
+  /* Left side (even cards) */
 }
 .education .edu-card:nth-child(even)::before {
   left: -32px;
@@ -640,9 +723,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 .contact {
   padding: 10rem 9% 2rem;
   background: transparent;
-  /* LEFT SIDE */
-  /* RIGHT FORM */
-  /* RESPONSIVE */
 }
 .contact .section-title {
   text-align: center;
@@ -658,10 +738,12 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
 }
+.contact {
+  /* LEFT SIDE */
+}
 .contact .contact-info {
   color: var(--first);
   padding-left: 10px;
-  /* SOCIAL ICONS — MATCH WITH YOUR COLOR */
 }
 .contact .contact-info h3 {
   font-size: 2rem;
@@ -782,6 +864,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   box-shadow: 0 0 0.7rem var(--color);
   transform: translateY(-7px);
 }
+.contact {
+  /* RESPONSIVE */
+}
 @media (max-width: 768px) {
   .contact .contact-wrapper {
     grid-template-columns: 1fr;
@@ -882,6 +967,19 @@ header nav .list-darkmode-menu .hamburger.active .bar {
     font-size: 14px;
   }
   .home .home-info .right .profile img {
+    width: 375px;
+    height: 375px;
+  }
+  .about .about-info .about-right h1 {
+    font-size: 3.6em;
+  }
+  .about .about-info .about-right h4 {
+    font-size: 1.8em;
+  }
+  .about .about-info .about-right p {
+    font-size: 14px;
+  }
+  .about .about-info .about-left .about-img img {
     width: 375px;
     height: 375px;
   }
